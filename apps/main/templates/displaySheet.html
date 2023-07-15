@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block title %} Kanji Sheets | Display strokes {% endblock %} {% block content %} {% load static %}
+<div class="mt-10 p-10 bg-sky-600/[0.5] rounded-lg">
+	{% for kanji in kanjis %}
+	<div class="row">
+		<img src="/static/img/kanji/{{ kanji }}" />
+		<img style="opacity: 0.3" src="/static/img/kanji/{{ kanji }}" />
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}

@@ -1,6 +1,7 @@
 <!-- Navigation bar -->
+{% load static %}
 <nav
-	class="relative flex w-full items-center justify-between bg-cyan-600 py-2 text-white shadow-lg hover:text-slate-200 focus:text-slate-200 dark:bg-neutral-600 dark:text-neutral-200 md:flex-wrap md:justify-start"
+	class="relative flex w-full items-center justify-between bg-cyan-600/[0.7] py-2 text-white shadow-lg hover:text-slate-200 focus:text-slate-200 dark:bg-neutral-600 dark:text-neutral-200 md:flex-wrap md:justify-start"
 	data-te-navbar-ref
 >
 	<div class="flex w-full flex-wrap items-center justify-between px-3">
@@ -26,48 +27,56 @@
 
 		<!-- Navigation links -->
 		<div class="!visible hidden grow basis-[100%] items-center lg:!flex lg:basis-auto" id="navbarSupportedContentX" data-te-collapse-item>
-			<ul class="mr-auto flex flex-col lg:flex-row" data-te-navbar-nav-ref>
-				<li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-					<a
-						class="block transition duration-150 ease-in-out hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:hover:text-white dark:focus:text-white lg:p-2 [&.active]:text-black/90"
-						href="#!"
-						data-te-nav-link-ref
-						data-te-ripple-init
-						data-te-ripple-color="light"
-						>Home</a
-					>
-				</li>
-				<li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-					<a
-						class="block transition duration-150 ease-in-out hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:hover:text-white dark:focus:text-white lg:p-2 [&.active]:text-black/90"
-						href="#!"
-						data-te-nav-link-ref
-						data-te-ripple-init
-						data-te-ripple-color="light"
-						>Features</a
-					>
-				</li>
-				<li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-					<a
-						class="block transition duration-150 ease-in-out hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:hover:text-white dark:focus:text-white lg:p-2 [&.active]:text-black/90"
-						href="#!"
-						data-te-nav-link-ref
-						data-te-ripple-init
-						data-te-ripple-color="light"
-						>Pricing</a
-					>
-				</li>
-				<li class="mb-2 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-					<a
-						class="block transition duration-150 ease-in-out hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:hover:text-white dark:focus:text-white lg:p-2 [&.active]:text-black/90"
-						href="#!"
-						data-te-nav-link-ref
-						data-te-ripple-init
-						data-te-ripple-color="light"
-						>About</a
-					>
-				</li>
-			</ul>
+			<div class="w-2/3 m-auto flex">
+				<ul class="mr-auto flex flex-col lg:flex-row" data-te-navbar-nav-ref>
+					<li class="self-center mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+						<a
+							class="block text-xl transition duration-150 ease-in-out hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:hover:text-white dark:focus:text-white lg:p-2 [&.active]:text-black/90"
+							href="{% url 'main:index' %}"
+							data-te-nav-link-ref
+							data-te-ripple-init
+							data-te-ripple-color="light"
+							>Home</a
+						>
+					</li>
+					<li class="self-center mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+						<a
+							class="block text-xl transition duration-150 ease-in-out hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:hover:text-white dark:focus:text-white lg:p-2 [&.active]:text-black/90"
+							href="{% url 'main:displaySheet' %}"
+							data-te-nav-link-ref
+							data-te-ripple-init
+							data-te-ripple-color="light"
+							>Display Kanji</a
+						>
+					</li>
+					{% comment %}
+					<li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+						<a
+							class="block text-xl transition duration-150 ease-in-out hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:hover:text-white dark:focus:text-white lg:p-2 [&.active]:text-black/90"
+							href="{% url 'main:pdf_view' %}"
+							data-te-nav-link-ref
+							data-te-ripple-init
+							data-te-ripple-color="light"
+							>Generate PDF</a
+						>
+					</li>
+					{% endcomment %} {% comment %}
+					<li class="mb-2 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+						<a
+							class="block text-xl transition duration-150 ease-in-out hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:hover:text-white dark:focus:text-white lg:p-2 [&.active]:text-black/90"
+							href="#!"
+							data-te-nav-link-ref
+							data-te-ripple-init
+							data-te-ripple-color="light"
+							>About</a
+						>
+					</li>
+					{% endcomment %}
+				</ul>
+				<div>
+					<img width="125" src="{% static 'img/totoro_logo.png' %}" alt="" />
+				</div>
+			</div>
 		</div>
 	</div>
 </nav>
